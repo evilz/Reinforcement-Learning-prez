@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Introduction au Reinforcement Learning</title>
+    <link rel="stylesheet" href="reveal.css">
+    <link rel="stylesheet" href="theme/blood.css">
+    <script src="reveal.js"></script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Introduction au Reinforcement Learning</h1>
+                <p>Bienvenue dans cette présentation sur le Reinforcement Learning. Le Reinforcement Learning est un
+                    domaine de l'apprentissage automatique qui se concentre sur la prise de décisions en environnement
+                    dynamique.</p>
+            </section>
+            <section>
+                <h2>Objectifs de l'apprentissage par renforcement</h2>
+                <ul>
+                    <li>Maximiser une récompense numérique</li>
+                    <li>Apprendre à prendre des décisions en fonction de l'état actuel de l'environnement</li>
+                    <li>Acquérir des compétences pour résoudre des problèmes complexes dans des environnements réels
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Processus de l'apprentissage par renforcement</h2>
+                <ol>
+                    <li>L'agent observe l'état de l'environnement</li>
+                    <li>L'agent choisit une action à effectuer</li>
+                    <li>L'environnement renvoie un état de récompense et un nouvel état d'environnement</li>
+                    <li>L'agent met à jour sa stratégie d'action en fonction de la récompense reçue et des états
+                        observés</li>
+                </ol>
+            </section>
+            <section>
+                <h2>Concepts clés du Reinforcement Learning</h2>
+                <ul>
+                    <li><strong>Agent :</strong> l'entité qui prend des décisions en fonction de l'état actuel de
+                        l'environnement.</li>
+                    <li><strong>Environnement :</strong> le monde dans lequel l'agent évolue et prend des décisions.
+                    </li>
+                    <li><strong>Récompense :</strong> une valeur numérique qui indique si l'action prise par l'agent
+                        était bonne ou mauvaise.</li>
+                    <li><strong>État :</strong> une représentation de l'environnement à un moment donné, qui peut
+                        inclure des informations sur la position, la vitesse, etc.</li>
+                    <li><strong>Action :</strong> une décision prise par l'agent en réponse à un état donné de
+                        l'environnement.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Types d'algorithmes de Reinforcement Learning</h2>
+                <p>Il existe plusieurs types d'algorithmes de Reinforcement Learning, chacun avec ses propres avantages
+                    et inconvénients. Voici quelques-uns des plus courants :</p>
+            </section>
+
+            <section>
+                <h3>Programmation dynamique</h3>
+                <p>La programmation dynamique est une méthode pour résoudre des problèmes de décision séquentielle avec
+                    des modèles probabilistes connus. Elle utilise des algorithmes itératifs pour trouver la politique
+                    optimale pour l'agent en fonction de la fonction de valeur de l'état. Cette approche est très
+                    efficace pour les problèmes de petite à moyenne taille, mais elle peut être coûteuse pour des
+                    problèmes plus complexes.</p>
+            </section>
+
+            <section>
+                <h3>Méthode de Monte Carlo</h3>
+                <p>La méthode de Monte Carlo est une technique pour estimer les valeurs de la fonction de valeur de
+                    l'état en utilisant des échantillons aléatoires de trajectoires d'agent. Cette méthode est efficace
+                    pour les problèmes dans lesquels les transitions sont probabilistes et les récompenses sont
+                    retardées. Cependant, elle peut nécessiter un grand nombre d'échantillons pour atteindre une
+                    précision suffisante.</p>
+
+
+            </section>
+
+            <section>
+                <h3>TD learning</h3>
+                <p>La TD learning (Temporal Difference learning) est une méthode pour mettre à jour la fonction de
+                    valeur de l'état à chaque étape de l'agent, en utilisant la différence temporelle entre les
+                    estimations de la récompense et les estimations précédentes. Cette approche est très efficace pour
+                    les problèmes dans lesquels les transitions sont inconnues et les récompenses sont retardées.
+                    Cependant, elle peut être sensible aux erreurs d'estimation initiales.</p>
+            </section>
+
+            <section>
+                <h3>Q-learning</h3>
+                <p>Q-learning est une méthode pour apprendre une fonction de valeur d'action en utilisant une politique
+                    de comportement $\epsilon$-greedy. Elle utilise une mise à jour de la fonction de valeur d'action en
+                    utilisant la différence temporelle entre la récompense et la valeur de la meilleure action dans
+                    l'état suivant. Cette approche est très efficace pour les problèmes avec des espaces d'états et
+                    d'actions discrets, mais peut être coûteuse pour les grands espaces d'états et d'actions.</p>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Exemples et avantages/inconvénients des différentes méthodes</h2>
+                </section>
+                <section>
+                    <h3>1. Programmation dynamique</h3>
+                    <ul>
+                        <li><strong>Exemple concret :</strong> Résoudre un jeu de cartes comme le Blackjack en utilisant
+                            la
+                            programmation dynamique pour trouver la stratégie optimale du joueur.</li>
+                        <li><strong>Avantages :</strong> Efficace pour les problèmes de petite à moyenne taille, fournit
+                            une
+                            solution optimale.</li>
+                        <li><strong>Inconvénients :</strong> Coûteuse pour les problèmes plus complexes, nécessite un
+                            modèle
+                            probabiliste connu.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>2. Méthode de Monte Carlo</h3>
+                    <ul>
+                        <li><strong>Exemple concret :</strong> Estimer la valeur d'un état dans un jeu de Go en
+                            utilisant la
+                            méthode de Monte Carlo pour simuler plusieurs parties aléatoires à partir de cet état.</li>
+                        <li><strong>Avantages :</strong> Efficace pour les problèmes avec des transitions probabilistes
+                            et
+                            des récompenses retardées, ne nécessite pas de modèle probabiliste.</li>
+                        <li><strong>Inconvénients :</strong> Peut nécessiter un grand nombre d'échantillons pour
+                            atteindre
+                            une précision suffisante.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>3. TD learning</h3>
+                    <ul>
+                        <li><strong>Exemple concret :</strong> Apprendre à jouer à un jeu de société comme le Scrabble
+                            en
+                            utilisant TD learning pour mettre à jour la fonction de valeur de l'état à chaque coup.</li>
+                        <li><strong>Avantages :</strong> Efficace pour les problèmes avec des transitions inconnues et
+                            des
+                            récompenses retardées, peut être utilisée avec des réseaux de neurones pour des espaces
+                            d'états
+                            et d'actions continus.</li>
+                        <li><strong>Inconvénients :</strong> Sensible aux erreurs d'estimation initiales.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>4. Q-learning</h3>
+                    <ul>
+                        <li><strong>Exemple concret :</strong> Apprendre à jouer à un jeu vidéo comme le Pac-Man en
+                            utilisant Q-learning pour mettre à jour la fonction de valeur d'action à chaque mouvement.
+                        </li>
+                        <li><strong>Avantages :</strong> Efficace pour les problèmes avec des espaces d'états et
+                            d'actions
+                            discrets, peut être utilisée avec des réseaux de neurones pour des espaces d'états et
+                            d'actions
+                            continus.</li>
+                        <li><strong>Inconvénients :</strong> Peut être coûteuse pour les grands espaces d'états et
+                            d'actions, ne garantit pas une solution optimale pour tous les problèmes.</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>En fonction du problème que vous souhaitez résoudre, certaines méthodes peuvent être plus
+                        appropriées
+                        que d'autres. Il est important de comprendre les avantages et les inconvénients de chaque
+                        méthode
+                        avant de décider laquelle utiliser.</p>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Exemples de Reinforcement Learning dans différents domaines</h2>
+                </section>
+
+                <section>
+                    <h3>Jeux</h3>
+                    <p>Le Reinforcement Learning a été largement utilisé pour résoudre des jeux tels que :</p>
+                    <ul>
+                        <li>Le jeu de Go</li>
+                        <li>Le jeu d'échecs</li>
+                        <li>Le jeu de poker</li>
+                        <li>Le jeu de blackjack</li>
+                    </ul>
+                    <p>Les algorithmes de Reinforcement Learning ont permis aux ordinateurs de battre des champions du
+                        monde dans certains de ces jeux.</p>
+                </section>
+
+                <section>
+                    <h3>Robotique</h3>
+                    <p>Le Reinforcement Learning est également utilisé en robotique pour apprendre à contrôler les
+                        mouvements d'un robot. Par exemple :</p>
+                    <ul>
+                        <li>Un robot peut apprendre à marcher en utilisant des méthodes de Reinforcement Learning pour
+                            trouver les mouvements les plus efficaces.</li>
+                        <li>Un robot peut apprendre à attraper des objets en utilisant des méthodes de Reinforcement
+                            Learning pour ajuster sa prise en fonction des récompenses reçues.</li>
+                    </ul>
+                    <p>Cela permet aux robots de s'adapter à leur environnement et d'apprendre de nouvelles tâches sans
+                        programmation manuelle.</p>
+                </section>
+
+                <section>
+                    <h3>Véhicules autonomes</h3>
+                    <p>Le Reinforcement Learning est également utilisé dans le domaine des véhicules autonomes pour
+                        apprendre à conduire. Par exemple :</p>
+                    <ul>
+                        <li>Un véhicule autonome peut apprendre à naviguer dans un environnement complexe en utilisant
+                            des méthodes de Reinforcement Learning pour trouver la meilleure trajectoire.</li>
+                        <li>Un véhicule autonome peut apprendre à réagir aux conditions de circulation en utilisant des
+                            méthodes de Reinforcement Learning pour trouver la meilleure stratégie de conduite.</li>
+                    </ul>
+                    <p>Cela permet aux véhicules autonomes de s'adapter à des situations imprévues et de prendre des
+                        décisions en temps réel.</p>
+                </section>
+
+                <section>
+                    <h3>Finance</h3>
+                    <p>Le Reinforcement Learning est également utilisé en finance pour la prise de décision. Par exemple
+                        :</p>
+                    <ul>
+                        <li>Un algorithme de trading peut apprendre à prendre des décisions d'achat et de vente en
+                            fonction des récompenses reçues.</li>
+                        <li>Un algorithme de gestion de portefeuille peut apprendre à allouer des actifs en fonction des
+                            récompenses reçues.</li>
+                    </ul>
+                    <p>Cela permet de prendre des décisions de manière plus efficace en utilisant l'apprentissage
+                        automatique pour trouver les meilleures stratégies.</p>
+                </section>
+
+            </section>
+
+            <section>
+                <section>
+                    <h2>Avantages et limites du Reinforcement Learning</h2>
+                </section>
+
+                <section>
+                    <h3>Avantages</h3>
+                    <ul>
+                        <li>Le Reinforcement Learning permet d'apprendre à partir de l'expérience sans nécessiter de
+                            données étiquetées.</li>
+                        <li>Le Reinforcement Learning peut être utilisé pour des tâches pour lesquelles il n'y a pas de
+                            solution analytique connue.</li>
+                        <li>Le Reinforcement Learning permet de s'adapter à des environnements dynamiques et
+                            imprévisibles.</li>
+                        <li>Le Reinforcement Learning peut être utilisé pour apprendre des politiques de décision
+                            optimales pour des tâches spécifiques.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Limites</h3>
+                    <ul>
+                        <li>Le Reinforcement Learning peut nécessiter beaucoup de temps et de ressources de calcul pour
+                            l'apprentissage.</li>
+                        <li>Le Reinforcement Learning peut être sensible à la conception de l'environnement et des
+                            récompenses, ce qui peut conduire à des politiques sous-optimales.</li>
+                        <li>Le Reinforcement Learning peut avoir des problèmes de généralisation, c'est-à-dire qu'il
+                            peut ne pas être en mesure de transférer les connaissances apprises dans un environnement à
+                            un autre.</li>
+                        <li>Le Reinforcement Learning peut être sensible aux erreurs d'estimation, qui peuvent se
+                            propager tout au long de l'apprentissage.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Conclusion</h2>
+                    </section>
+
+                    <section>
+                        <h3>Points clés à retenir</h3>
+                        <ul>
+                            <li>Le Reinforcement Learning est une méthode d'apprentissage machine basée sur
+                                l'apprentissage par renforcement.</li>
+                            <li>L'agent interagit avec l'environnement en effectuant des actions et en recevant des
+                                récompenses.</li>
+                            <li>Il existe plusieurs types d'algorithmes de Reinforcement Learning, chacun avec ses
+                                propres avantages et inconvénients.</li>
+                            <li>Le Reinforcement Learning peut être utilisé dans de nombreux domaines, tels que les
+                                jeux, la robotique, les véhicules autonomes et la finance.</li>
+                            <li>Le Reinforcement Learning présente à la fois des avantages et des limites.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Questions ?</h3>
+                        <p>Merci d'avoir suivi cette présentation sur le Reinforcement Learning. Si vous avez des
+                            questions, n'hésitez pas à les poser maintenant.</p>
+                    </section>
+
+                </section>
+
+            </section>
+
+        </div>
+    </div>
+    <script>
+        // Configuration de Reveal.js
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'slide'
+        });
+    </script>
+</body>
+
+</html>
